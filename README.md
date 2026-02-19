@@ -1,4 +1,6 @@
-# Modelado-UML-Avanzado-Gesti-n-de-Pedidos.
+## Modelado-UML-Avanzado-Gesti-n-de-Pedidos.
+
+```mermaid
 classDiagram
     class Cliente {
         -String id
@@ -35,3 +37,4 @@ classDiagram
     Pedido "1" *-- "1..*" LineaPedido : compuesto por (composición)
     LineaPedido "0..*" o-- "1" Producto : referencia (agregación)
     Pedido ..> EstadoPedido : usa
+```
