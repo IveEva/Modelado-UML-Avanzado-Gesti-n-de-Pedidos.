@@ -40,3 +40,58 @@ classDiagram
     LineaPedido "0..*" o-- "1" Producto : referencia
     Pedido ..> EstadoPedido : usa
 ```
+
+
+## Modelado-UML-Avanzado-Gesti-n-de-Pedidos:
+Ahora vamos a editar el prompt base no incluyendo los tipos de agregaciones para observar si se generan automáticamente. 
+Quiero diseñar el diagrama de clases UML de un sistema con clases en Java orientado a objetos, antes de programarlo. El sistema será una aplicación sencilla de gestión de pedidos para una tienda, con las siguientes funcionalidades: 
+	Un Cliente puede realizar varios pedidos. 
+	Cada Pedido tiene una fecha y un estado (pendiente o entregado). 
+	Cada Pedido está compuesto por una o varias líneas de pedido. 
+	Cada Línea de Pedido indica la cantidad de un Producto concreto. 
+	Un Producto tiene nombre y precio. 
+	Un Producto puede aparecer en muchas líneas de pedido. 
+	Si se elimina un Pedido, sus líneas desaparecen. 
+	Si se elimina un Cliente, los pedidos pueden mantenerse como histórico. 
+	Requisitos del diagrama: Usa formato Mermaid. 
+
+```mermaid
+classDiagram
+    class Cliente {
+        -String id
+        -String nombre
+        -String email
+        +realizarPedido()
+    }
+
+    class Pedido {
+        -String id
+        -LocalDate fecha
+        -EstadoPedido estado
+        +agregarLinea(producto: Producto, cantidad: int)
+        +calcularTotal() Double
+    }
+
+    class LineaPedido {
+        -int cantidad
+        -Double subtotal
+        +calcularSubtotal() Double
+    }
+
+    class Producto {
+        -String nombre
+        -Double precio
+    }
+
+    class EstadoPedido {
+        <<enumeration>>
+        PENDIENTE
+        ENTREGADO
+    }
+
+    Cliente "1" --> "0..*" Pedido : tiene
+    Pedido "1" *-- "1..*" LineaPedido : contiene
+    LineaPedido "0..*" o-- "1" Producto : especifica
+    Pedido ..> EstadoPedido : usa
+
+```
