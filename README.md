@@ -42,7 +42,7 @@ classDiagram
 ```
 
 
-## Modelado-UML-Avanzado-Gesti-n-de-Pedidos:
+## Modelado-UML-Avanzado-Gesti-n-de-Pedidos: prompt más sencillo.
 Ahora vamos a editar el prompt base no incluyendo los tipos de agregaciones para observar si se generan automáticamente. 
 Quiero diseñar el diagrama de clases UML de un sistema con clases en Java orientado a objetos, antes de programarlo. El sistema será una aplicación sencilla de gestión de pedidos para una tienda, con las siguientes funcionalidades: 
 	Un Cliente puede realizar varios pedidos. 
