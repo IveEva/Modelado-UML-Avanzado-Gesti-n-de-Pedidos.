@@ -29,13 +29,14 @@ classDiagram
         -Double precio
     }
 
-    <<enumeration>> EstadoPedido
-    EstadoPedido : PENDIENTE
-    EstadoPedido : ENTREGADO
+    class EstadoPedido {
+        <<enumeration>>
+        PENDIENTE
+        ENTREGADO
+    }
 
-    %% Relaciones
-    Cliente "1" --> "0..*" Pedido : historial (asociación)
-    Pedido "1" *-- "1..*" LineaPedido : compuesto por (composición)
-    LineaPedido "0..*" o-- "1" Producto : referencia (agregación)
+    Cliente "1" --> "0..*" Pedido : historial
+    Pedido "1" *-- "1..*" LineaPedido : compuesto_por
+    LineaPedido "0..*" o-- "1" Producto : referencia
     Pedido ..> EstadoPedido : usa
 ```
