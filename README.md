@@ -1,4 +1,5 @@
-## Modelado-UML-Avanzado-Gesti-n-de-Pedidos.
+## Modelado-UML-Avanzado-Gesti-n-de-Pedidos:
+Actúa como un experto en ingeniería de software y genera el código Mermaid.js para un diagrama de clases UML en Java, diseñado para documentación técnica en GitHub. El sistema debe modelar una tienda donde un Cliente tiene una relación de asociación con Pedido (1:N), permitiendo que los pedidos persistan como histórico si el cliente se elimina; sin embargo, cada Pedido debe tener una relación de composición con LineaPedido, de modo que estas se destruyan si el pedido desaparece. Incluye atributos con tipos de datos de Java (como String, Double, LocalDate), multiplicidad en las conexiones, un Enum para el EstadoPedido (PENDIENTE, ENTREGADO) y métodos clave como calcularTotal(), asegurando que cada LineaPedido esté vinculada a un Producto que contiene nombre y precio.
 
 ```mermaid
 classDiagram
